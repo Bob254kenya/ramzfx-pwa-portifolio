@@ -3,7 +3,7 @@
     "private": true,
     "version": "0.0.1",
     "engines": {
-        "node": "20.x"
+        "node": "24.x"
     },
     "scripts": {
         "start": "node node_modules/@rsbuild/core/bin/rsbuild.js dev",
@@ -23,7 +23,8 @@
         "dev:commit-push": "powershell -ExecutionPolicy Bypass -File scripts/dev-commit-push.ps1",
         "type-check": "tsc --noEmit",
         "build:pwa": "rsbuild build",
-        "serve:pwa": "http-server dist -p 8443 -a localhost -o"
+        "serve:pwa": "http-server dist -p 8443 -a localhost -o",
+        "vercel-build": "npm install --legacy-peer-deps && npm run build"
     },
     "dependencies": {
         "@deriv-com/quill-ui": "^1.18.1",
